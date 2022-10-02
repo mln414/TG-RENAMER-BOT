@@ -23,7 +23,7 @@ async def save_photo(c, m):
             return await m.reply_text(TEXT.NOT_LOGGED_TEXT, quote=True)
 
     download_location = f"{Config.DOWNLOAD_LOCATION}/{m.from_user.id}.jpg"
-    await update_thumb(m.from_user.id, message.id)
+    await update_thumb(m.from_user.id, m.id)
     await m.download(file_name=download_location)
 
     await m.reply_text(
